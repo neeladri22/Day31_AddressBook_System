@@ -36,6 +36,7 @@ namespace AddressBookSystem
             //Sort Persons Name Alphabetically for a given city
             RetrieveEntriesSortedAlphabeticallyByPersonsName();
 
+           
         }
         //Create New Database
         public static void CreateAddressBookServiceDB()
@@ -171,7 +172,7 @@ namespace AddressBookSystem
         //Sort Persons Name Alphabetically for a given city
         public static void RetrieveEntriesSortedAlphabeticallyByPersonsName()
         {
-            var SQL = @$"SELECT * FROM AddressBook WHERE City = 'Sirsi' ORDER by FirstName ASC";
+            var SQL = @$"SELECT * FROM AddressBook WHERE City = 'Donkuru' ORDER by FirstName PNR";
             string connectingString = @"Data Source=DESKTOP-2UKFQA8;Initial Catalog=AddreessBook_System;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectingString);
             SqlCommand cmd = new SqlCommand(SQL, connection);
