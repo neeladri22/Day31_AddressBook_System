@@ -20,3 +20,16 @@ Email Varchar(20)
 --To View the AddressBook Table
 SELECT * FROM AddressBook
 
+--Insert COntacts into AddressBook
+INSERT INTO AddressBook Values 
+('Neeladri','Pulakala','Srikakulam','Andhra pradesh', 'AP','532312','7385412789','neela@gmail.com'),
+('Usha','Pulakala','Icchapuram','Andhra pradesh', 'AP','532312','6535412789','usha@gmail.com'),
+('Varsa','Pulakala','Srikakulam','Andhra pradesh', 'AP','532312','5235412789','varsa@gmail.com');
+
+
+
+
+
+
+
+
