@@ -19,4 +19,4 @@ Email Varchar(20)
 
 --To View the AddressBook Table
 SELECT * FROM AddressBook
-Footer
+
