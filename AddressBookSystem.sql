@@ -39,6 +39,15 @@ DELETE AddressBook WHERE FirstName = 'Varsa'
 --Retrieve the persons city / State by using persons name
 Select City, State from AddressBook where FirstName = 'Neeladri'
 
+--Size of Addressbook by City / State
+select COUNT(City) FROM AddressBook
+select COUNT(State) FROM AddressBook
+
+
+
+
+
+
 
 
 
