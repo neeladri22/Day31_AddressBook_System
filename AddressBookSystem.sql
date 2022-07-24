@@ -43,6 +43,15 @@ Select City, State from AddressBook where FirstName = 'Neeladri'
 select COUNT(City) FROM AddressBook
 select COUNT(State) FROM AddressBook
 
+INSERT INTO AddressBook Values
+('Srinu','Marri','sonna','sonna', 'Odisa','546321','3652147896','srinu@gmail.com'),
+('Padma','Marri','Plpuram','Plpuram', 'Andhra','654321','7894561236','padma@gmail.com'),
+('Hema','Dunna','Donkuru','Donkuru', 'Bangalore','654789','9638527417','sony@gmail.com');
+
+--Sort Persons Name Alphabetically for a given city
+SELECT * FROM AddressBook WHERE City = 'Donkuru' ORDER by FirstName PNR
+Fo
+
 
 
 
