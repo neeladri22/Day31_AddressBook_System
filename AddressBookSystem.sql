@@ -50,7 +50,6 @@ INSERT INTO AddressBook Values
 
 --Sort Persons Name Alphabetically for a given city
 SELECT * FROM AddressBook WHERE City = 'Donkuru' ORDER by FirstName PNR
-Fo
 
 
 
