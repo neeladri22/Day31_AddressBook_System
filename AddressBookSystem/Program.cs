@@ -24,6 +24,12 @@ namespace AddressBookSystem
 
             //Retrieve the persons city / State by using persons name
             RetrievePersonBelongsToCityByPersonsName();
+
+            //Size of Addressbook by City 
+            SizeOfAddressBookByCity();
+
+            //Size of Addressbook by State
+            SizeOfAddressBookByState();
         }
         //Create New Database
         public static void CreateAddressBookServiceDB()
@@ -128,6 +134,31 @@ namespace AddressBookSystem
                 }
                 reader.Close();
             };
+            Console.ReadKey();
+        }
+        //Size of Addressbook by City 
+        public static void SizeOfAddressBookByCity()
+        {
+            var SQL = @$"select COUNT(City) FROM AddressBook";
+            string connectingString = @"Data Source=DESKTOP-2UKFQA8;Initial Catalog=AddreessBook_System;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectingString);
+            SqlCommand cmd = new SqlCommand(SQL, connection);
+            connection.Open();
+            int reader = cmd.ExecuteNonQuery();
+            Console.WriteLine("Size of the AddressBook is " + reader);
+            Console.ReadKey();
+        }
+
+        //Size of the Addressbook by State
+        public static void SizeOfAddressBookByState()
+        {
+            var SQL = @$"select COUNT(State) FROM AddressBook";
+            string connectingString = @"Data Source=DESKTOP-2UKFQA8;Initial Catalog=AddreessBook_System;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectingString);
+            SqlCommand cmd = new SqlCommand(SQL, connection);
+            connection.Open();
+            int reader = cmd.ExecuteNonQuery();
+            Console.WriteLine("Size of the AddressBook is " + reader);
             Console.ReadKey();
         }
 
