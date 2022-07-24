@@ -28,6 +28,10 @@ INSERT INTO AddressBook Values
 
 
 
+--Edit the existing data in the table
+UPDATE AddressBook
+set Address = 'Dwaraka', City = 'Visaka' where FirstName = 'Usha' ;
+
 
 
 
