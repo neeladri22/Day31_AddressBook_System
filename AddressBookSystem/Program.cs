@@ -15,6 +15,9 @@ namespace AddressBookSystem
 
             //Insert New Contacts in  AddressBook Table
             InsertContactInAddressBookTable();
+
+            //Update existing Contacts in  AddressBook Table
+            UpdateExistingContactInAddressBookTable();
         }
         //Create New Database
         public static void CreateAddressBookServiceDB()
@@ -70,6 +73,20 @@ namespace AddressBookSystem
             int reader = cmd.ExecuteNonQuery();
             Console.WriteLine(reader);
             Console.WriteLine("New contact is Successfully inserted");
+            Console.ReadKey();
+        }
+
+        //Update existing Contacts in  AddressBook Table
+        public static void UpdateExistingContactInAddressBookTable()
+        {
+            var SQL = @$"UPDATE AddressBook set Address = 'madhurai', City = 'madhurai' where FirstName = 'Neeladri'";
+            string connectingString = @"Data Source=DESKTOP-2UKFQA8;Initial Catalog=AddreessBook_System;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectingString);
+            SqlCommand cmd = new SqlCommand(SQL, connection);
+            connection.Open();
+            int reader = cmd.ExecuteNonQuery();
+            Console.WriteLine(reader);
+            Console.WriteLine("Contact is Updated Successfully ");
             Console.ReadKey();
         }
 
