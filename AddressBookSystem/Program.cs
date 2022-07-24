@@ -9,6 +9,9 @@ namespace AddressBookSystem
         {
             //Create AddreessBook_System Database
             CreateAddressBookServiceDB();
+
+            //Create AddressBook Table-UC2
+            CreateAddressBookTable(); 
         }
         //Create New Database
         public static void CreateAddressBookServiceDB()
@@ -34,6 +37,20 @@ namespace AddressBookSystem
                 connection.Close();
             }
 
+        }
+
+        //Create AddressBook Table
+        public static void CreateAddressBookTable()
+        {
+            var SQL = @$"CREATE TABLE AddressBook ( FirstName Varchar(20), LastName Varchar(15), Address Varchar(50), City Varchar(20), State Varchar(20), ZIP int, PhoneNumber Varchar(15), Email Varchar(20) )";
+            string connectingString = @"Data Source=DESKTOP-2UKFQA8;Initial Catalog=AddreessBook_System;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectingString);
+            SqlCommand cmd = new SqlCommand(SQL, connection);
+            connection.Open();
+            int reader = cmd.ExecuteNonQuery();
+            Console.WriteLine(reader);
+            Console.WriteLine("AddressBook Table Created Successfully");
+            Console.ReadKey();
         }
     }
 }
