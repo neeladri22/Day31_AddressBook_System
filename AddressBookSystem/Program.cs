@@ -36,7 +36,13 @@ namespace AddressBookSystem
             //Sort Persons Name Alphabetically for a given city
             RetrieveEntriesSortedAlphabeticallyByPersonsName();
 
-           
+            //Identify the address book by Name and Type
+            IdentifyAddressBookByNameandType(); //UC9
+
+            //Identify the address book by Name and Type
+            UpdateAddressBookByNameandType(); //UC9-extended
+
+
         }
         //Create New Database
         public static void CreateAddressBookServiceDB()
@@ -187,6 +193,37 @@ namespace AddressBookSystem
                 }
                 reader.Close();
             };
+            Console.ReadKey();
+        }
+
+        //Identify the address book by Name and Type
+        public static void IdentifyAddressBookByNameandType()
+        {
+            var SQL = @$"ALTER TABLE AddressBook ADD AddressBookName varchar (20),AddressBookType varchar (20)";
+            string connectingString = @"Data Source=DESKTOP-2UKFQA8;Initial Catalog=AddreessBook_System;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectingString);
+            SqlCommand cmd = new SqlCommand(SQL, connection);
+            connection.Open();
+            int reader = cmd.ExecuteNonQuery();
+            Console.WriteLine(reader);
+            Console.WriteLine("AddressBook Table is Updated Successfully ");
+            Console.ReadKey();
+        }
+
+        //Identify the address book by Name and Type
+        public static void UpdateAddressBookByNameandType()
+        {
+            var SQL = @$"update AddressBook SET AddressBookName = 'Self', AddressBookType = 'Family' where FirstName = 'Neeladri'
+                        update AddressBook SET AddressBookName = 'Varsa', AddressBookType = 'Friend' where FirstName = 'Dunna'
+                        update AddressBook SET AddressBookName = 'Usha', AddressBookType = 'Family' where FirstName = 'Pulakala'";
+           
+            string connectingString = @"Data Source=DESKTOP-2UKFQA8;Initial Catalog=AddreessBook_System;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectingString);
+            SqlCommand cmd = new SqlCommand(SQL, connection);
+            connection.Open();
+            int reader = cmd.ExecuteNonQuery();
+            Console.WriteLine(reader);
+            Console.WriteLine("AddressBook Table is Updated Successfully ");
             Console.ReadKey();
         }
 
