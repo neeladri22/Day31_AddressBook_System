@@ -60,7 +60,8 @@ update AddressBook SET AddressBookName = 'Hema', AddressBookType = 'Friend' wher
 update AddressBook SET AddressBookName = 'Varsa', AddressBookType = 'Family' where FirstName = 'Varsa'
 update AddressBook SET AddressBookName = 'Usha', AddressBookType = 'Family' where FirstName = 'Usha'
 
-
+--Get number of contact persons i.e count by type
+SELECT AddressBookType,  COUNT(AddressBookType) from AddressBook group by AddressBookType
 
 
 
